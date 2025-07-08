@@ -13,7 +13,7 @@ import { GoPlus } from "react-icons/go";
 export default function Home() {
   return (
     <main className='min-h-[90dvh] w-full flex justify-center items-center p-6 max-w-2xl mx-auto dark:bg-gray-950'>
-      <Card className='h-2/3 px-4 py-8'>
+      <Card className='w-full h-2/3 px-4 py-8'>
         <CardHeader>
           <div className='flex justify-center items-center space-x-2 mb-4'>
             <BsFileEarmarkPdf size={40} />
@@ -24,7 +24,8 @@ export default function Home() {
             PDF Quiz Generator
           </CardTitle>
           <CardDescription>
-            Upload a PDF to generate a quiz based on its content.
+            Upload a PDF to generate a quiz based on its content. Your results
+            will be waiting for you upon completion.
           </CardDescription>
         </CardHeader>
         <CardContent>
