@@ -20,7 +20,7 @@ const UploadForm = () => {
 
     const { text } = await res.json();
 
-    const quizRes = await fetch("/api/generate-quis", {
+    const quizRes = await fetch("/api/generate-quiz", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
