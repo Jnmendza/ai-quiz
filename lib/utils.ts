@@ -5,6 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function numQuestions(wordCound: number) {
+export function generateNumQuestions(wordCound: number) {
   return Math.floor(wordCound / 300);
 }
