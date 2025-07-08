@@ -12,7 +12,7 @@ import { GoPlus } from "react-icons/go";
 
 export default function Home() {
   return (
-    <main className='min-h-[90dvh] w-full flex justify-center items-center p-6 max-w-2xl mx-auto dark:bg-gray-950'>
+    <main className='min-h-[90dvh] w-full flex justify-center items-center p-6 max-w-2xl mx-auto'>
       <Card className='w-full h-2/3 px-4 py-8'>
         <CardHeader>
           <div className='flex justify-center items-center space-x-2 mb-4'>
