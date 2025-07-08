@@ -40,7 +40,7 @@ const UploadForm = () => {
       />
       <Button
         onClick={handleUpload}
-        className='bg-blue-500 text-white px-4 py-2 rounded'
+        className=' text-white px-4 py-2 rounded w-full dark:text-black'
       >
         Upload and Generate quiz
       </Button>
