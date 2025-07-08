@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 const UploadForm = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -31,17 +33,17 @@ const UploadForm = () => {
 
   return (
     <div className='space-y-4'>
-      <input
+      <Input
         type='file'
         accept='application/pdf'
         onChange={(e) => setFile(e.target.files?.[0] || null)}
       />
-      <button
+      <Button
         onClick={handleUpload}
         className='bg-blue-500 text-white px-4 py-2 rounded'
       >
         Upload and Generate quiz
-      </button>
+      </Button>
     </div>
   );
 };
