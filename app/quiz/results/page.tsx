@@ -9,6 +9,7 @@ const ResultsPage = () => {
   const [quiz, setQuiz] = useState<QuizQuestion[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>([]);
   const router = useRouter();
+  console.log(quiz);
 
   useEffect(() => {
     const quizData = sessionStorage.getItem("quiz");
@@ -21,9 +22,18 @@ const ResultsPage = () => {
   const reset = () => router.push("/quiz");
   const restart = () => router.push("/");
 
+  const correctCount = quiz.reduce((acc, q, index) => {
+    return acc + (answers[index] === q.correctAnswer ? 1 : 0);
+  }, 0);
+
+  const percentage =
+    quiz.length > 0 ? Math.round((correctCount / quiz.length) * 100) : 0;
   return (
     <main className='p-6 max-w-3xl mx-auto space-y-6'>
       <h1 className='text-2xl font-bold'>Results</h1>
+      <p className='text-lg font-semibold'>
+        Score: {correctCount} / {quiz.length} ({percentage}%)
+      </p>
       {quiz.map((q, index) => {
         const selected = answers[index];
         const correct = q.correctAnswer;
@@ -59,8 +69,10 @@ const ResultsPage = () => {
         );
       })}
       <div className='flex space-x-4'>
-        <Button onClick={reset}>Reset Quiz</Button>
-        <Button variant='outline' onClick={restart}>
+        <Button onClick={reset} className='cursor-pointer'>
+          Reset Quiz
+        </Button>
+        <Button variant='outline' onClick={restart} className='cursor-pointer'>
           Try Another PDF
         </Button>
       </div>

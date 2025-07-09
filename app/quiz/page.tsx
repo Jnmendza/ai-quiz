@@ -54,7 +54,9 @@ const QuizPage = () => {
           </CardContent>
         </Card>
       ))}
-      <Button onClick={handleSubmit}>Submit Quiz</Button>
+      <Button onClick={handleSubmit} className='cursor-pointer'>
+        Submit Quiz
+      </Button>
     </main>
   );
 };
